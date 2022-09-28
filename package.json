@@ -1,0 +1,44 @@
+{
+  "name": "theuncommonbyte",
+  "version": "1.0.0",
+  "private": true,
+  "description": "theuncommonbyte",
+  "author": "Vincent",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@nfront/global-styles": "^1.2.1",
+    "@portabletext/react": "^1.0.6",
+    "@sanity/image-url": "^1.0.1",
+    "@stitches/react": "^1.2.8",
+    "babel-plugin-prismjs": "^2.1.0",
+    "babel-preset-gatsby": "^2.23.0",
+    "dayjs": "^1.11.5",
+    "gatsby": "^4.22.0",
+    "gatsby-plugin-image": "^2.22.0",
+    "gatsby-plugin-sanity-image": "^0.13.0",
+    "gatsby-plugin-sharp": "^4.22.0",
+    "gatsby-source-filesystem": "^4.22.0",
+    "gatsby-source-sanity": "^7.4.2",
+    "gatsby-transformer-sharp": "^4.22.0",
+    "prismjs": "^1.29.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.45",
+    "@types/prismjs": "^1.26.0",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "typescript": "^4.8.2"
+  }
+}
