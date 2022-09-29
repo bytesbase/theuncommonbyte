@@ -18,9 +18,9 @@ function Preview({ post }: PreviewProps) {
       to={post.slug.current}
     >
       <Flex css={{ mb: "0.5rem" }} tags>
-        <div>{useFormattedDate(post.publishedAt)}</div>
-        <span>//</span>
-        <div>{useReadTime(post._rawBody)}</div>
+        <div>
+          {useFormattedDate(post.publishedAt)} // {useReadTime(post._rawBody)}
+        </div>
       </Flex>
       <StyledH2 marked="orange">{post.title}</StyledH2>
       <BlockContent content={post._rawBlurb} />
