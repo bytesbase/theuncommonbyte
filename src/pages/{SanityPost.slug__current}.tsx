@@ -19,7 +19,7 @@ export default function page({ data }: SanityPost) {
   const { post, siteSettings } = data;
   const { author } = data.post;
   const siteSettingsNode = siteSettings.edges[0].node;
-  const twitterUrl = `http://twitter.com/intent/tweet?url=https://theuncommonbyte.com/${post.slug.current}&text=Check out this article by @polarvue`;
+  const twitterUrl = `https://twitter.com/intent/tweet?url=https://theuncommonbyte.com/${post.slug.current}&text="${post.title}" by ${siteSettingsNode.twitterHandle}`;
 
   const handleTrackGoal = (goalCode: string) => {
     if (process.env.NODE_ENV === "production") Fathom.trackGoal(goalCode, 0);
