@@ -25,6 +25,30 @@ const config: GatsbyConfig = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `The Uncommon Byte`,
+        short_name: `Uncommon Byte`,
+        start_url: `/`,
+        background_color: `#FFF`,
+        theme_color: `#FBEDE0`,
+        display: `standalone`,
+        icon: `src/images/favicon.png`,
+        icons: [
+          {
+            src: `/favicons/android-chrome-192x192.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `/favicons/android-chrome-512x512.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+        ],
+      },
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",

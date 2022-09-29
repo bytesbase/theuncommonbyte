@@ -34,6 +34,7 @@ export type SocialLinkItem = {
 export type SiteSettings = {
   siteName: string;
   logoText: string;
+  twitterHandle: string;
   navigation: NavigationItem[];
   socialLinks: SocialLinkItem[];
 } & SEOTypes;
@@ -46,6 +47,7 @@ export type SEOTypes = {
   seoDescription: string;
   seoKeywords: string;
   seoImage: SanityAsset;
+  twitterAlt: string;
   author: {
     name: string;
     socialLink: string;

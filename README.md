@@ -16,4 +16,4 @@ This site uses
 - [Dayjs](https://day.js.org/)
 - [Prism](https://prismjs.com/)
 
-Hit me up on twitter @uncommonbyte if you have any questions
+Hit me up on twitter [@uncommonbyte](https://twitter.com/uncommonbyte) if you have any questions

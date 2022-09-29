@@ -23,8 +23,10 @@
     "babel-plugin-prismjs": "^2.1.0",
     "babel-preset-gatsby": "^2.23.0",
     "dayjs": "^1.11.5",
+    "fathom-client": "^3.5.0",
     "gatsby": "^4.22.0",
     "gatsby-plugin-image": "^2.22.0",
+    "gatsby-plugin-manifest": "^4.24.0",
     "gatsby-plugin-sanity-image": "^0.13.0",
     "gatsby-plugin-sharp": "^4.22.0",
     "gatsby-source-filesystem": "^4.22.0",
@@ -32,7 +34,8 @@
     "gatsby-transformer-sharp": "^4.22.0",
     "prismjs": "^1.29.0",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-dom": "^18.1.0",
+    "save": "^2.9.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.45",

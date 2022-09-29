@@ -39,6 +39,7 @@ export const query = graphql`
     seoDescription
     seoKeywords
     seoTitle
+    twitterHandle
     seoImage {
       asset {
         gatsbyImageData(placeholder: BLURRED)

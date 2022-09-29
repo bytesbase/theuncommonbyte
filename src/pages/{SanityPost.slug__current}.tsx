@@ -1,5 +1,4 @@
 import { graphql } from "gatsby";
-
 import React from "react";
 import BlockContent from "../components/Sanity/BlockContent";
 import Layout from "../components/Layout";
@@ -14,13 +13,17 @@ import {
 import { useFaqStructure } from "../hooks/useStructuredData";
 import { useFormattedDate, useReadTime } from "../hooks/useUtilities";
 import Seo from "../components/Seo";
+import * as Fathom from "fathom-client";
 
 export default function page({ data }: SanityPost) {
   const { post, siteSettings } = data;
-  const siteSettingsNode = siteSettings.edges[0].node;
   const { author } = data.post;
-
+  const siteSettingsNode = siteSettings.edges[0].node;
   const twitterUrl = `http://twitter.com/intent/tweet?url=https://theuncommonbyte.com/${post.slug.current}&text=Check out this article by @polarvue`;
+
+  const handleTrackGoal = (goalCode: string) => {
+    if (process.env.NODE_ENV === "production") Fathom.trackGoal(goalCode, 0);
+  };
 
   return (
     <Layout siteSettings={siteSettingsNode}>
@@ -57,6 +60,7 @@ export default function page({ data }: SanityPost) {
             underline
             href="https://github.com/bytesbase/theuncommonbyte-www"
             target="_blank"
+            onClick={() => handleTrackGoal("AZTKD64E")}
           >
             View source code
           </StyledAnchor>
@@ -117,6 +121,7 @@ export const query = graphql`
       seoTitle
       seoDescription
       seoKeywords
+      twitterAlt
       seoImage {
         asset {
           gatsbyImageData(placeholder: BLURRED)

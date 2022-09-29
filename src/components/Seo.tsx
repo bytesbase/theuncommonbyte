@@ -10,14 +10,15 @@ import {
 
 type Props = {
   mainImage?: SanityAsset;
-  siteSettings: Pick<SiteSettings, "siteName">;
+  siteSettings: Pick<SiteSettings, "siteName" | "twitterHandle">;
   seo: SEOTypes;
 } & React.PropsWithChildren;
 
 export default function Seo(props: Props) {
   const { seo, siteSettings, mainImage } = props;
-  const { seoTitle, seoDescription, seoKeywords, seoImage, slug } = seo;
-  const { siteName } = siteSettings;
+  const { seoTitle, seoDescription, seoKeywords, seoImage, slug, twitterAlt } =
+    seo;
+  const { siteName, twitterHandle } = siteSettings;
 
   const image = seoImage
     ? seoImage.asset.gatsbyImageData
@@ -25,10 +26,10 @@ export default function Seo(props: Props) {
 
   return (
     <>
-      <meta name="description" content={seoDescription} />
-
       <title>{seoTitle}</title>
       <meta name="keywords" content={seoKeywords} />
+      <meta property="image" content={getSrc(image)} />
+      <meta name="description" content={seoDescription} />
 
       <meta property="og:title" content={seoTitle} />
       <meta property="og:description" content={seoDescription} />
@@ -44,9 +45,12 @@ export default function Seo(props: Props) {
       <meta property="og:site_name" content={siteName} />
       <meta property="og:type" content="website" />
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content={twitterHandle} />
+      <meta name="twitter:creator" content={twitterHandle} />
       <meta name="twitter:title" content={seoTitle} />
       <meta name="twitter:description" content={seoDescription} />
       <meta name="twitter:image" content={getSrc(image)} />
+      <meta name="twitter:alt" content={twitterAlt ?? "Development blog"} />
 
       {props.children}
     </>

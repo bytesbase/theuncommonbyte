@@ -53,12 +53,14 @@ export default function HTML(props: HTMLProps) {
           rel="stylesheet"
           href="https://use.typekit.net/ahf2dnw.css"
         ></link>
-        <script
-          src="https://cdn.usefathom.com/script.js"
-          data-spa="auto"
-          data-site="AGWQDEUG"
-          defer
-        ></script>
+        {process.env.NODE_ENV === "production" && (
+          <script
+            src="https://cdn.usefathom.com/script.js"
+            data-spa="auto"
+            data-site="AGWQDEUG"
+            defer
+          ></script>
+        )}
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
