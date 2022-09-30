@@ -58,7 +58,7 @@ export default function page({ data }: SanityPost) {
           </StyledAnchor>
           <StyledAnchor
             underline
-            href="https://github.com/bytesbase/theuncommonbyte-www"
+            href="https://github.com/bytesbase/theuncommonbyte"
             target="_blank"
             onClick={() => handleTrackGoal("AZTKD64E")}
           >
