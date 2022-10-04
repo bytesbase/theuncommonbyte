@@ -72,9 +72,10 @@ export default function page({ data }: SanityPost) {
 
 export const Head = ({ data }: SanityPost) => {
   const { post, siteSettings } = data;
+  const { seo } = post;
   const siteSettingsNode = siteSettings.edges[0].node;
 
-  const faqStructure = useFaqStructure(post.faq);
+  const faqStructure = useFaqStructure(seo.faq);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -83,11 +84,7 @@ export const Head = ({ data }: SanityPost) => {
 
   return (
     <>
-      <Seo
-        mainImage={post.mainImage.image}
-        siteSettings={siteSettingsNode}
-        seo={post}
-      >
+      <Seo post={post} siteSettings={siteSettingsNode} seo={seo}>
         {faqStructure && (
           <script
             type="application/ld+json"
@@ -118,15 +115,6 @@ export const query = graphql`
           }
         }
       }
-      seoTitle
-      seoDescription
-      seoKeywords
-      twitterAlt
-      seoImage {
-        asset {
-          gatsbyImageData(placeholder: BLURRED)
-        }
-      }
       author {
         name
         socialLink
@@ -135,12 +123,7 @@ export const query = graphql`
         title
       }
       publishedAt
-      faq {
-        faqItems {
-          question
-          answer
-        }
-      }
+      ...Seo
     }
     siteSettings: allSanitySiteSettings {
       edges {

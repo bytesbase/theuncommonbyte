@@ -58,7 +58,7 @@ export const Head = ({ data }: IndexProps) => {
 
   return (
     <>
-      <Seo siteSettings={siteSettingsNode} seo={siteSettingsNode}></Seo>
+      <Seo siteSettings={siteSettingsNode} seo={siteSettingsNode.seo}></Seo>
     </>
   );
 };

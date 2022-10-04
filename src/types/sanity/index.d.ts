@@ -37,21 +37,15 @@ export type SiteSettings = {
   twitterHandle: string;
   navigation: NavigationItem[];
   socialLinks: SocialLinkItem[];
-} & SEOTypes;
+  seo: SEOTypes;
+};
 
 export type SEOTypes = {
-  slug: {
-    current: string;
-  };
-  seoTitle: string;
+  faq: Faq;
   seoDescription: string;
   seoKeywords: string;
   seoImage: SanityAsset;
   twitterAlt: string;
-  author: {
-    name: string;
-    socialLink: string;
-  };
 };
 
 export type Post = {
@@ -62,8 +56,15 @@ export type Post = {
   _rawBody: SanityBlockContent;
   _rawBlurb: SanityBlockContent;
   publishedAt: Date;
-  faq: Faq;
-} & SEOTypes;
+  slug: {
+    current: string;
+  };
+  author: {
+    name: string;
+    socialLink: string;
+  };
+  seo: SEOTypes;
+};
 
 export type SanityPost = {
   data: {

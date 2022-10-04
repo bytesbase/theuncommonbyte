@@ -36,15 +36,7 @@ export const query = graphql`
   fragment SiteInformation on SanitySiteSettings {
     siteName
     logoText
-    seoDescription
-    seoKeywords
-    seoTitle
     twitterHandle
-    seoImage {
-      asset {
-        gatsbyImageData(placeholder: BLURRED)
-      }
-    }
     navigation {
       name
       slug
@@ -54,6 +46,22 @@ export const query = graphql`
     socialLinks {
       platform
       url
+    }
+    seo {
+      faq {
+        faqItems {
+          question
+          answer
+        }
+      }
+      seoDescription
+      seoKeywords
+      twitterAlt
+      seoImage {
+        asset {
+          gatsbyImageData(placeholder: BLURRED)
+        }
+      }
     }
   }
 `;
