@@ -35,6 +35,9 @@
     "prismjs": "^1.29.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-markdown": "^8.0.3",
+    "rehype-prism-plus": "^1.5.0",
+    "remark-gfm": "^3.0.1",
     "save": "^2.9.0"
   },
   "devDependencies": {

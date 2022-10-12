@@ -54,6 +54,8 @@ export type Post = {
   mainImage: SanityImage;
   categories: string;
   _rawBody: SanityBlockContent;
+  content: string;
+  useMarkdown: boolean;
   _rawBlurb: SanityBlockContent;
   publishedAt: Date;
   slug: {

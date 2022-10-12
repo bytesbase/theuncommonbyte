@@ -31,7 +31,7 @@ const BlockContentContainer = styled("div", {
       color: "$link",
     },
   },
-
+  
   ol: {
     listStyle: "decimal",
     listStylePosition: "inside",

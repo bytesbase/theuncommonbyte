@@ -14,9 +14,10 @@ import { useFaqStructure } from "../hooks/useStructuredData";
 import { useFormattedDate, useReadTime } from "../hooks/useUtilities";
 import Seo from "../components/Seo";
 import * as Fathom from "fathom-client";
+import SanityMarkdown from "../components/Sanity/SanityMarkdown";
 
 export default function page({ data }: SanityPost) {
-  const { post, siteSettings } = data;
+  const { post, siteSettings } = data;  
   const { author } = data.post;
   const siteSettingsNode = siteSettings.edges[0].node;
   const twitterUrl = `https://twitter.com/intent/tweet?url=https://theuncommonbyte.com/${post.slug.current}&text="${post.title}" by ${siteSettingsNode.twitterHandle}`;
@@ -50,7 +51,8 @@ export default function page({ data }: SanityPost) {
           </div>
         </Flex>
 
-        <BlockContent content={post._rawBody} />
+        {!post.useMarkdown && <BlockContent content={post._rawBody} />}
+        {post.useMarkdown && <SanityMarkdown content={post.content} />}
 
         <Flex tags css={{ mt: "3rem" }} columnMobile>
           <StyledAnchor underline href={twitterUrl} target="_blank">
@@ -104,6 +106,8 @@ export const query = graphql`
       _id
       title
       _rawBody
+      content
+      useMarkdown
       slug {
         current
       }
